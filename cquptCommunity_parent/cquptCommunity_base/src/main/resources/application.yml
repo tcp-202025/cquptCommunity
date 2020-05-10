@@ -1,0 +1,17 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: cquptCommunity-base  #注册到eureka注册中心中的名称
+
+  #配置数据源
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.174.132:3306/cquptCommunity_base?characterEncoding=utf-8
+    username: root
+    password: root
+
+  #配置jpa
+  jpa:
+    database: mysql  #数据库类型
+    show-sql: true   #显示sql
