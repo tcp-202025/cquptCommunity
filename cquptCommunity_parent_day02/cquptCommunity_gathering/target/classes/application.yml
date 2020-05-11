@@ -1,0 +1,13 @@
+server: 
+  port: 9005
+spring: 
+  application:  
+    name: cquptCommunity-gathering #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.174.132:3306/cquptCommunity_gathering?characterEncoding=utf-8
+    username: root
+    password: root
+  jpa: 
+    database: MySQL
+    show-sql: true
