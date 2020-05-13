@@ -1,0 +1,13 @@
+server: 
+  port: 9003
+spring: 
+  application:  
+    name: cquptCommunity-qa #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.174.132:3306/cquptCommunity_qa?characterEncoding=utf-8
+    username: root
+    password: root
+  jpa: 
+    database: MySQL
+    show-sql: true
