@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4a8ee18-b06e-472a-a21b-b5a775054bf3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program Files (x86)/maven/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\Program Files (x86)\maven\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1bi8YnvTc2fTKPscoQNP3otoYKq" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cquptCommunity_common/src/main/java/util" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_recruit\src\main\java\cn\cquptCommunity\recruit\service\impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.cquptCommunity.qa.config" />
+      <recent name="cn.cquptCommunity.qa.interceptor" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_common\src\main\java\util" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_sms\src\main\java\cn\cquptCommunity\sms\utils" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_sms\src\main\resources" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_search\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UserApplication">
+    <configuration name="QaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.cquptCommunity.qa.QaApplication" />
+      <module name="cquptCommunity_qa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.qa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpitApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cn.cquptCommunity.spit.SpitApplication" />
+      <module name="cquptCommunity_spit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.spit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_article" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.spit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.spit.ArticleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.search.SearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.user.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Application.QaApplication" />
+        <item itemvalue="Spring Boot.SearchApplication" />
+        <item itemvalue="Spring Boot.ArticleApplication" />
+        <item itemvalue="Application.SpitApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4a8ee18-b06e-472a-a21b-b5a775054bf3" name="Default Changelist" comment="" />
+      <created>1589103603512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589103603512</updated>
+      <workItem from="1589103604920" duration="3352000" />
+      <workItem from="1589106968177" duration="6821000" />
+      <workItem from="1589162266932" duration="611000" />
+      <workItem from="1589182086726" duration="25566000" />
+      <workItem from="1589261591187" duration="16250000" />
+      <workItem from="1589301743277" duration="450000" />
+      <workItem from="1589370470529" duration="12714000" />
+      <workItem from="1589436922933" duration="14601000" />
+      <workItem from="1589524439963" duration="17929000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1589467058702">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1589467058702" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589559208924">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589559208924" />
+    <state x="1034" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1589371815368">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1034" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589371815368" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589210574946">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589210574946" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589107199023">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589107199023" />
+    <state width="663" height="194" key="GridCell.Tab.0.bottom" timestamp="1589561098079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589561098079" />
+    <state width="663" height="194" key="GridCell.Tab.0.center" timestamp="1589561098079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589561098079" />
+    <state width="663" height="194" key="GridCell.Tab.0.left" timestamp="1589561098079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589561098079" />
+    <state width="663" height="194" key="GridCell.Tab.0.right" timestamp="1589561098079">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589561098079" />
+    <state width="663" height="194" key="GridCell.Tab.1.bottom" timestamp="1589561098077">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589561098077" />
+    <state width="663" height="194" key="GridCell.Tab.1.center" timestamp="1589561098077">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589561098077" />
+    <state width="663" height="194" key="GridCell.Tab.1.left" timestamp="1589561098077">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589561098077" />
+    <state width="663" height="194" key="GridCell.Tab.1.right" timestamp="1589561098077">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="663" height="194" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589561098077" />
+    <state x="413" y="44" width="938" height="686" key="Maven.ArtifactSearchDialog" timestamp="1589108856881">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="413" y="44" width="938" height="686" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589108856881" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1589107203737">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589107203737" />
+    <state x="588" y="213" width="800" height="610" key="new project wizard" timestamp="1589546250184">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="588" y="213" width="800" height="610" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589546250184" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589376045406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589376045406" />
+  </component>
+</project>

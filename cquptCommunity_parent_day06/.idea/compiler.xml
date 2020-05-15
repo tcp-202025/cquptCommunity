@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cquptCommunity_user" />
+        <module name="cquptCommunity_sms" />
+        <module name="cquptCommunity_base" />
+        <module name="cquptCommunity_gathering" />
+        <module name="cquptCommunity_article" />
+        <module name="cquptCommunity_spit" />
+        <module name="cquptCommunity_recruit" />
+        <module name="cquptCommunity_search" />
+        <module name="cquptCommunity_qa" />
+        <module name="cquptCommunity_common" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cquptCommunity_article" options="-parameters" />
+      <module name="cquptCommunity_base" options="-parameters" />
+      <module name="cquptCommunity_common" options="-parameters" />
+      <module name="cquptCommunity_gathering" options="-parameters" />
+      <module name="cquptCommunity_qa" options="-parameters" />
+      <module name="cquptCommunity_recruit" options="-parameters" />
+      <module name="cquptCommunity_search" options="-parameters" />
+      <module name="cquptCommunity_sms" options="-parameters" />
+      <module name="cquptCommunity_spit" options="-parameters" />
+      <module name="cquptCommunity_user" options="-parameters" />
+    </option>
+  </component>
+</project>

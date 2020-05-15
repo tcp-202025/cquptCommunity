@@ -1,0 +1,17 @@
+server: 
+  port: 9009
+spring:
+  application:
+    name: cquptCommunity_sms  #微服务的名称
+
+  #配置rabbitmq
+  rabbitmq:
+    host: 192.168.174.132   #指定要连接的主机
+
+#使用阿里云的短信服务来发送验证码
+aliyun:
+  sms:
+    accessKeyId: LTAI4G1hR7rnBTnmuEM9YMFV
+    accessKeySecret: 3tzNfgS4rBDHtf6ZHwIfzlMp2YF5LA
+    template_code: SMS_190266056  #申请的模板
+    sign_name: cquptBar           #签名名称
