@@ -1,0 +1,8 @@
+server:
+  port: 9000    #访问eureka注册中心所需的端口号
+eureka:
+  client:
+    register-with-eureka: false  #在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为
+    fetch-registry: false  #是否从Eureka中获取注册信息
+    serviceUrl:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/  #Eureka客户端与Eureka服务端进行交互的地址

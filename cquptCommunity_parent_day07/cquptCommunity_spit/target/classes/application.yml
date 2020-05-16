@@ -1,0 +1,15 @@
+server: 
+  port: 9006
+spring: 
+  application:  
+    name: cquptCommunity-spit #指定服务名
+
+  #配置springDateMongoDB
+  data:
+    mongodb:
+      host: 192.168.174.132
+      database: spitdb  #要连接的数据库
+
+  #配置redis
+  redis:
+    host: 192.168.174.132
