@@ -1,0 +1,45 @@
+server:
+  port: 9011
+
+spring:
+  application:
+    name: cquptCommunity-manager
+#把自己注册到eureka中（url是eureka注册中心的访问路径）
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka   #eureka注册中心的访问路径
+  instance:
+    prefer-ip-address: true #实现跨域访问
+
+zuul:
+  routes:
+    cquptCommunity-base: #路由的名称，可以随便写，一般命名为服务名
+      path: /base/**
+      serviceId: cquptCommunity-base #通过服务的id来进行路由：凡是以base开头的路径都会被路由到cquptCommunity-base这个微服务中去
+    cquptCommunity‐gathering: #活动
+      path: /gathering/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-gathering #指定Eureka注册中心中的服务id
+    cquptCommunity‐article: #文章
+      path: /article/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-article #指定Eureka注册中心中的服务id
+    cquptCommunity‐friend: #交友
+      path: /friend/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-friend #指定Eureka注册中心中的服务id
+    cquptCommunity‐qa: #问答
+      path: /qa/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-qa #指定Eureka注册中心中的服务id
+    cquptCommunity‐recruit: #招聘
+      path: /recruit/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-recruit #指定Eureka注册中心中的服务id
+    cquptCommunity‐spit: #吐槽
+      path: /spit/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-spit #指定Eureka注册中心中的服务id
+    cquptCommunity‐user: #用户
+      path: /user/** #配置请求URL的请求规则
+      serviceId: cquptCommunity-user #指定Eureka注册中心中的服务id
+#配置要使用的JWT的配置信息
+jwt:
+  config:
+    key: cquptCommunity   #所加的盐
+    ttl: 3600000          #过期时间

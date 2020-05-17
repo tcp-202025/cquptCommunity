@@ -1,0 +1,8 @@
+#从springConfig配置中心中拿到自己的配置文件：在gitee平台创建的仓库中master主干中去找http://localhost:12000/eureka-dev
+spring:
+  cloud:
+    config:
+      name: eureka
+      profile: dev
+      label: master
+      uri: http://localhost:12000

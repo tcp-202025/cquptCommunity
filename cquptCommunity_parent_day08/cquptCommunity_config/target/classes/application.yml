@@ -1,0 +1,21 @@
+server:
+  port: 12000
+
+spring:
+  application:
+    name: cquptCommunity-config  #微服务的名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/tcp-202025/cquptCommunity.git  #git仓库的地址，Spring Cloud Config作为配置中心可以从git上拿到各个模块的配置文件
+  #配置rabbitmq
+  rabbitmq:
+    host: 192.168.174.132
+#使用springBus消息总线功能
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
