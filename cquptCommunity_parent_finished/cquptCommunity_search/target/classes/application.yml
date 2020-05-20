@@ -1,0 +1,16 @@
+server: 
+  port: 9007
+spring: 
+  application:  
+    name: cquptCommunity-search #指定服务名
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.174.132:9300 #指定要连接的elasticsearch
+
+#把自己注册到eureka中（url是eureka注册中心的访问路径）
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka   #eureka注册中心的访问路径
+  instance:
+    prefer-ip-address: true #实现跨域访问
