@@ -212,7 +212,7 @@ public class UserService {
 	 * 用户登录
 	 */
 	public User login(User user) {
-    	//先根据传入用户名去数据库中查询数据
+    	//先根据传入手机号去数据库中查询数据
 		User resultUser = userDao.findByMobile(user.getMobile());
 		//然后拿到数据库中的密码与用户输入的密码进行匹配
 		/**
@@ -235,4 +235,11 @@ public class UserService {
     	userDao.updateFansCount(x,friendid);//更新粉丝数：当前用户点击了关注之后，对方的粉丝数加一
     	userDao.updateFollowCount(x,userid);//当前用户的关注数加一
     }
+
+	/**
+	 * 根据用户昵称来查询用户
+	 */
+	public User findByNickName(String nickName){
+		return userDao.findByNickname(nickName);
+	}
 }

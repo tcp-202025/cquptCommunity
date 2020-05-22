@@ -179,4 +179,17 @@ public class ProblemService {
 
 	}
 
+	/**
+	 * 查询我(当前登录用户)提问了哪些问题
+	 */
+    public List<Problem> findMyProblem(String userid) {
+    	return problemDao.findByUserid(userid);
+    }
+
+	/**
+	 * 根据用户的昵称查出他提问了哪些问题
+	 */
+	public List<Problem> findByNickName(String nickname) {
+		return problemDao.findByNickname(nickname);
+	}
 }

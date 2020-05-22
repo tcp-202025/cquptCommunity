@@ -39,4 +39,14 @@ public interface ProblemDao extends JpaRepository<Problem,String>,JpaSpecificati
      */
     @Query(value ="SELECT * FROM q_problem,q_pl WHERE id=problemid AND labelid=? AND reply=0",nativeQuery = true)
     public Page<Problem> waitList(String labelid, Pageable pageable);
+
+    /**
+     * 查询当前登录用户提问过哪些问题
+     */
+    public List<Problem> findByUserid(String userid);
+
+    /**
+     * 根据用户的昵称查出他提问了哪些问题
+     */
+    public List<Problem> findByNickname(String nickName);
 }

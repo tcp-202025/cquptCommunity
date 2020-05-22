@@ -2,12 +2,14 @@ package cn.cquptCommunity.friend.client;
 
 import cn.cquptCommunity.friend.client.impl.UserClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
 /**
  * 声明一个feign接口，用于远程调用微服务模块
  */
+@Component
 @FeignClient(value = "cquptCommunity-user",fallback = UserClientFallback.class)//当用户点击关注之后，就远程调用user模块的更新粉丝数和更新关注数的方法
 public interface UserClient {
     @PutMapping("/user/inc/{userid}/{friendid}/{x}")

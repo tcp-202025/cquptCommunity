@@ -143,4 +143,17 @@ public class ReplyService {
 
 	}
 
+	/**
+	 * 查询我（当前登录用户）回答的问题
+	 */
+    public List<Reply> findMyReply(String userid) {
+    	return replyDao.findByUserid(userid);
+    }
+
+	/**
+	 * 根据用户的昵称查出他回答了哪些问题
+	 */
+	public List<Reply> findByNickName(String nickname) {
+		return replyDao.findByNickname(nickname);
+	}
 }

@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.cquptCommunity.user.client.FriendClient;
+import cn.cquptCommunity.user.pojo.UserFollow;
+import cn.cquptCommunity.user.service.UserFollowService;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +34,9 @@ public class UserController {
 	private UserService userService;
 
 	@Autowired
+	private UserFollowService userFollowService;
+
+	@Autowired
 	private RedisTemplate redisTemplate;
 
 	@Autowired
@@ -41,11 +44,6 @@ public class UserController {
 
 	@Autowired
 	private JwtUtil jwtUtil;//生成token和解析token的工具类
-
-	@Autowired
-	private FriendClient friendClient;//远程调用friend微服务
-
-
 	/**
 	 * 发送短信验证码
 	 */
@@ -61,13 +59,21 @@ public class UserController {
 	 */
 	@PostMapping("/register/{code}")
 	public Result register(@PathVariable("code") String code,@RequestBody User user){
+		if(user.getNickname()==null||"".equals(user.getNickname())||user.getPassword()==null||"".equals(user.getPassword())){
+			return new Result(false,StatusCode.ERROR,"注册失败，请填入正确信息");
+		}
 		//获取缓存中的验证码
 		String checkCode_redis=(String) redisTemplate.opsForValue().get("checkCode_"+user.getMobile());
-		if(checkCode_redis.isEmpty()){
+		if(checkCode_redis==null){
 			return new Result(false,StatusCode.ERROR,"请先获取手机验证码");
 		}
 		if(!checkCode_redis.equals(code)){
 			return new Result(false,StatusCode.ERROR,"验证码错误");
+		}
+		String nickname = user.getNickname();
+		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询用户
+		if(userByNickname!=null){ //表示用户名已经存在
+			return new Result(false,StatusCode.ERROR,"用户名存在，注册失败");
 		}
 		userService.add(user);//调用add方法注册
 		return new Result(true,StatusCode.OK,"注册成功");
@@ -89,6 +95,49 @@ public class UserController {
 		map.put("token",token);
 		map.put("roles","user");
 		return new Result(true,StatusCode.OK,"登录成功",map);
+	}
+
+
+	/**
+	 * 关注某用户
+	 */
+	@PutMapping("/follow/{nickname}")
+	public Result addLike(@PathVariable String nickname){
+		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询要关注的那个用户
+		String friendid = userByNickname.getId();//拿到我想关注的那个人的id
+		//需要对用户权限进行一个判定：判断当前用户是否登录
+		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
+		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
+		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
+			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+		}
+		//否则token不为空，表示有权限
+		Claims claims = jwtUtil.parseJWT(token);//解析token
+		String userid = claims.getId();//拿到登录的用户的id
+		userFollowService.add(userid,friendid);//向用户的关注表中添加数据
+		updateFansCountAndFollowCount(userid,friendid,1);//点击关注后，需要更新用户的关注数和好友的粉丝数
+		return new Result(true,StatusCode.OK,"关注成功");
+	}
+
+	/**
+	 * 取消关注
+	 */
+	@DeleteMapping("follow/{nickname}")
+	public Result deleteLike(@PathVariable String nickname){
+		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询要取消关注的那个用户
+		String friendid = userByNickname.getId();//拿到我想要取消关注的那个人的id
+		//需要对用户权限进行一个判定：判断当前用户是否登录
+		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
+		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
+		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
+			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+		}
+		//否则token不为空，表示有权限
+		Claims claims = jwtUtil.parseJWT(token);//解析token
+		String userid = claims.getId();//拿到登录的用户的id
+		userFollowService.delete(userid,friendid);//删除用户关注表中的数据
+		updateFansCountAndFollowCount(userid,friendid,-1);//取消关注后，需要更新用户的关注数和好友的粉丝数
+		return new Result(true,StatusCode.OK,"取消关注成功");
 	}
 
 	/**
@@ -183,7 +232,7 @@ public class UserController {
     }
 
 	/**
-	 * 查询我的粉丝:先拿到当前登录用户的userid，然后根据userid远程调用friend模块查询我的粉丝的id:然后根据这个id再来查询user表拿到我的粉丝的详细数据
+	 * 查询我的粉丝:先拿到当前登录用户的userid，然后根据userid去用户的关注表中查询我的粉丝的id:然后根据这个id再来查询user表拿到我的粉丝的详细数据
 	 */
 	@GetMapping("/follow/myfans")
 	public Result findMyFans(){
@@ -196,12 +245,13 @@ public class UserController {
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
 		String userid = claims.getId();//拿到登录的用户的id
-		//远程调用friend模块查询
-		List<String> ids = friendClient.findFans(userid);
+		//根据userid去用户的关注表中去查询我的粉丝
+		List<UserFollow> myFans = userFollowService.findMyFans(userid);
+		//拿到我的粉丝们的id
 		List<User> fansList=new ArrayList<>();
-		for (String id : ids) {
-			User fans = userService.findById(id);
-			fansList.add(fans);
+		for (UserFollow myFan : myFans) {
+			User user = userService.findById(myFan.getUserid());
+			fansList.add(user);
 		}
 		return new Result(true,StatusCode.OK,"查询成功",fansList);
 	}
@@ -220,12 +270,12 @@ public class UserController {
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
 		String userid = claims.getId();//拿到登录的用户的id
-		//远程调用friend模块查询
-		List<String> ids = friendClient.findMyFollow(userid);
+		//根据userid去用户的关注表中去查询我的关注
+		List<UserFollow> myFollows = userFollowService.findMyFollows(userid);
 		List<User> myFollowList=new ArrayList<>();
-		for (String id : ids) {
-			User myFollow = userService.findById(id);
-			myFollowList.add(myFollow);
+		for (UserFollow myFollow : myFollows) {
+			User user = userService.findById(myFollow.getUserid());
+			myFollowList.add(user);
 		}
 		return new Result(true,StatusCode.OK,"查询成功",myFollowList);
 	}
@@ -246,8 +296,13 @@ public class UserController {
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
 		String userid = claims.getId();//拿到登录的用户的id
-		//远程调用friend模块查询
-		List<String> ids = friendClient.findMyFollow(userid);//远程调用friend微服务查询我的关注的ID列表
+		//根据userid去用户的关注表中去查询我的关注
+		List<UserFollow> myFollows = userFollowService.findMyFollows(userid);
+		List<String> ids=new ArrayList<>();
+		for (UserFollow myFollow : myFollows) {
+			String myFollowId = myFollow.getUserid();
+			ids.add(myFollowId);
+		}
 		return new Result(true,StatusCode.OK,"查询成功",ids);
 	}
 

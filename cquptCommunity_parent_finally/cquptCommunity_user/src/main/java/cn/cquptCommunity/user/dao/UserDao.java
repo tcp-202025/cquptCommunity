@@ -12,7 +12,9 @@ import org.springframework.data.jpa.repository.Query;
  */
 public interface UserDao extends JpaRepository<User,String>,JpaSpecificationExecutor<User>{
 
-    public User findByMobile(String mobile);//根据用户名查询
+    public User findByMobile(String mobile);//根据手机号查询
+
+    public User findByNickname(String nickname);//根据用户名查询
 
     @Modifying
     @Query(value = "update u_user set fanscount=fanscount+? where id = ?",nativeQuery = true)
@@ -21,4 +23,6 @@ public interface UserDao extends JpaRepository<User,String>,JpaSpecificationExec
     @Modifying
     @Query(value = "update u_user set followcount=followcount+? where id = ?",nativeQuery = true)
     public void updateFollowCount(int x, String userid);//更新关注数
+
+
 }
