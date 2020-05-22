@@ -25,4 +25,9 @@ public interface UserFollowDao extends JpaRepository<UserFollow,String>, JpaSpec
      * 查询我的关注
      */
     public List<UserFollow> findByUserid(String userid);
+
+    /**
+     * 根据userid和targetuser去查找是否已经关注过
+     */
+    public UserFollow findByUseridAndTargetuser(String userid,String targetuser);
 }

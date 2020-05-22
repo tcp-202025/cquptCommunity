@@ -45,4 +45,11 @@ public class UserFollowService {
     public List<UserFollow> findMyFollows(String userid){
         return userFollowDao.findByUserid(userid);
     }
+
+    /**
+     * 根据userid和targetuser去查找是否已经关注过
+     */
+    public UserFollow findByUseridAndTargetuser(String userid, String targetuser){
+        return userFollowDao.findByUseridAndTargetuser(userid,targetuser);
+    }
 }

@@ -10,6 +10,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Selection;
 
+import cn.cquptCommunity.user.pojo.UserFollow;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -242,4 +243,5 @@ public class UserService {
 	public User findByNickName(String nickName){
 		return userDao.findByNickname(nickName);
 	}
+
 }

@@ -99,23 +99,46 @@ public class UserController {
 
 
 	/**
+	 * 查询是否关注：根据当前登录的id和nickname去用户的关注表中去查找：如果找到，则表示已经关注
+	 */
+	@GetMapping("/wherelike/{nickname}")
+	public Result findWhereLike(@PathVariable String nickname){
+		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询要关注的那个用户
+		String targetuser = userByNickname.getId();//拿到我想关注的那个人的id
+		//需要对用户权限进行一个判定：判断当前用户是否登录
+		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
+		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
+		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
+		}
+		//否则token不为空，表示有权限
+		Claims claims = jwtUtil.parseJWT(token);//解析token
+		String userid = claims.getId();//拿到登录的用户的id
+		UserFollow userFollow = userFollowService.findByUseridAndTargetuser(userid, targetuser);//根据用户id和targetuserId去查询用户关注表
+		if(userFollow!=null&&!"".equals(userFollow)){ //如果查到，表示该用户关注了targetuser
+			return new Result(true,StatusCode.OK,"已关注");
+		}
+		return new Result(false,StatusCode.OK,"未关注");
+	}
+
+	/**
 	 * 关注某用户
 	 */
 	@PutMapping("/follow/{nickname}")
 	public Result addLike(@PathVariable String nickname){
 		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询要关注的那个用户
-		String friendid = userByNickname.getId();//拿到我想关注的那个人的id
+		String targetuser = userByNickname.getId();//拿到我想关注的那个人的id
 		//需要对用户权限进行一个判定：判断当前用户是否登录
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
 		String userid = claims.getId();//拿到登录的用户的id
-		userFollowService.add(userid,friendid);//向用户的关注表中添加数据
-		updateFansCountAndFollowCount(userid,friendid,1);//点击关注后，需要更新用户的关注数和好友的粉丝数
+		userFollowService.add(userid,targetuser);//向用户的关注表中添加数据
+		updateFansCountAndFollowCount(userid,targetuser,1);//点击关注后，需要更新用户的关注数和好友的粉丝数
 		return new Result(true,StatusCode.OK,"关注成功");
 	}
 
@@ -125,18 +148,18 @@ public class UserController {
 	@DeleteMapping("follow/{nickname}")
 	public Result deleteLike(@PathVariable String nickname){
 		User userByNickname = userService.findByNickName(nickname);//根据用户昵称去查询要取消关注的那个用户
-		String friendid = userByNickname.getId();//拿到我想要取消关注的那个人的id
+		String targetuser = userByNickname.getId();//拿到我想要取消关注的那个人的id
 		//需要对用户权限进行一个判定：判断当前用户是否登录
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
 		String userid = claims.getId();//拿到登录的用户的id
-		userFollowService.delete(userid,friendid);//删除用户关注表中的数据
-		updateFansCountAndFollowCount(userid,friendid,-1);//取消关注后，需要更新用户的关注数和好友的粉丝数
+		userFollowService.delete(userid,targetuser);//删除用户关注表中的数据
+		updateFansCountAndFollowCount(userid,targetuser,-1);//取消关注后，需要更新用户的关注数和好友的粉丝数
 		return new Result(true,StatusCode.OK,"取消关注成功");
 	}
 
@@ -159,7 +182,7 @@ public class UserController {
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
@@ -177,7 +200,7 @@ public class UserController {
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
@@ -240,7 +263,7 @@ public class UserController {
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
@@ -265,7 +288,7 @@ public class UserController {
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
@@ -291,7 +314,7 @@ public class UserController {
 		//上述权限的判断交由拦截器帮我们处理,我们只需要直接拿到处理结果
 		String token=(String) request.getAttribute("claims_user");//拿到用户随身携带的令牌
 		if(token==null|| "".equals(token)){ //token为空，表示用户未登录
-			return new Result(false,StatusCode.ACCESSERROR,"权限不足");
+			return new Result(false,StatusCode.ACCESSERROR,"请先登录");
 		}
 		//否则token不为空，表示有权限
 		Claims claims = jwtUtil.parseJWT(token);//解析token
