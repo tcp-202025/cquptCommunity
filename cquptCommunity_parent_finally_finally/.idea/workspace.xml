@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4a8ee18-b06e-472a-a21b-b5a775054bf3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="cquptCommunity_parent" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Program Files (x86)/maven/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\Program Files (x86)\maven\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1bi8YnvTc2fTKPscoQNP3otoYKq" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cquptCommunity_article/src/main/java/cn/cquptCommunity/article" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_recruit\src\main\java\cn\cquptCommunity\recruit\service\impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.cquptCommunity.sms.listener" />
+      <recent name="cn.cquptCommunity.qa.client.impl" />
+      <recent name="cn.cquptCommunity.qa.client" />
+      <recent name="cn.cquptCommunity.gathering.client.impl" />
+      <recent name="cn.cquptCommunity.gathering.client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_article\src\main\java\cn\cquptCommunity\article" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_base\src\main\java\cn\cquptCommunity\base\service" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_base\src\main\java\cn\cquptCommunity\base\controller" />
+      <recent name="C:\Users\KD\IdeaProjects\cquptCommunity_parent\cquptCommunity_base\src\main\java\cn\cquptCommunity\base\dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ArticleApplication">
+    <configuration name="ArticleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_article" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.article.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.article.ArticleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cquptcommunity_config" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.config.ConfigServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_eureka" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.eureka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.eureka.EurekaServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_qa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.qa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.qa.QaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SmsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_sms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.sms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.sms.SmsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cquptCommunity_web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cquptCommunity.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cquptCommunity.web.WebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ArticleApplication" />
+        <item itemvalue="Spring Boot.EurekaServer" />
+        <item itemvalue="Spring Boot.QaApplication" />
+        <item itemvalue="Spring Boot.WebApplication" />
+        <item itemvalue="Spring Boot.SmsApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4a8ee18-b06e-472a-a21b-b5a775054bf3" name="Default Changelist" comment="" />
+      <created>1589103603512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589103603512</updated>
+      <workItem from="1589103604920" duration="3352000" />
+      <workItem from="1589106968177" duration="6821000" />
+      <workItem from="1589162266932" duration="611000" />
+      <workItem from="1589182086726" duration="25566000" />
+      <workItem from="1589261591187" duration="16250000" />
+      <workItem from="1589301743277" duration="450000" />
+      <workItem from="1589370470529" duration="12714000" />
+      <workItem from="1589436922933" duration="14601000" />
+      <workItem from="1589524439963" duration="18756000" />
+      <workItem from="1589602055743" duration="21082000" />
+      <workItem from="1589646989969" duration="3048000" />
+      <workItem from="1589685643335" duration="16473000" />
+      <workItem from="1589709734064" duration="8080000" />
+      <workItem from="1589789771656" duration="13629000" />
+      <workItem from="1589869353590" duration="19638000" />
+      <workItem from="1589956543188" duration="6269000" />
+      <workItem from="1589962836865" duration="12121000" />
+      <workItem from="1590040323099" duration="9104000" />
+      <workItem from="1590065917600" duration="12078000" />
+      <workItem from="1590134478362" duration="2982000" />
+      <workItem from="1590142691730" duration="8580000" />
+      <workItem from="1590164313371" duration="1264000" />
+      <workItem from="1590218585897" duration="25490000" />
+      <workItem from="1590298522610" duration="25767000" />
+      <workItem from="1590373111399" duration="9000" />
+      <workItem from="1590393498121" duration="10634000" />
+      <workItem from="1590484523109" duration="11799000" />
+      <workItem from="1590557019207" duration="1220000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="744" y="323" key="#CloudFoundry" timestamp="1589696816652">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="744" y="323" key="#CloudFoundry/0.0.1536.824@0.0.1536.824" timestamp="1589696816652" />
+    <state x="361" y="71" key="#Project_Structure" timestamp="1590055674934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1590055674934" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589816621691">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589816621691" />
+    <state x="1034" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1590505486337">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="1034" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590505486337" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589907471624">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589907471624" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589732691346">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589732691346" />
+    <state width="1493" height="278" key="GridCell.Tab.0.bottom" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.0.center" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.0.left" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.0.right" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.1.center" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.1.left" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state width="1493" height="278" key="GridCell.Tab.1.right" timestamp="1590498962528">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="278" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590498962528" />
+    <state x="413" y="44" width="938" height="686" key="Maven.ArtifactSearchDialog" timestamp="1589646823431">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="413" y="44" width="938" height="686" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589646823431" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1590393514916">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1590393514916" />
+    <state x="673" y="164" width="800" height="610" key="new project wizard" timestamp="1590054966428">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="673" y="164" width="800" height="610" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1590054966428" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1590315819514">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590315819514" />
+  </component>
+</project>
